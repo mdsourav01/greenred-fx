@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenRed FX Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px;
+    }
+    .signal-box {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: inline-block;
+      min-width: 200px;
+    }
+    .green {
+      color: #00ff00;
+      font-size: 24px;
+    }
+    .red {
+      color: #ff3333;
+      font-size: 24px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #333;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>📈 GreenRed FX Bot</h1>
+  <p>রিয়েল টাইম সিগন্যাল দেখুন — লস কমান, প্রফিট বাড়ান</p>
+
+  <div class="signal-box">
+    <div id="signal" class="green">সিগন্যাল: CALL 📈</div>
+  </div>
+
+  <button onclick="toggleSignal()">Toggle Signal</button>
+
+  <script>
+    let isGreen = true;
+    function toggleSignal() {
+      const signal = document.getElementById('signal');
+      if (isGreen) {
+        signal.textContent = 'সিগন্যাল: PUT 📉';
+        signal.className = 'red';
+      } else {
+        signal.textContent = 'সিগন্যাল: CALL 📈';
+        signal.className = 'green';
+      }
+      isGreen = !isGreen;
+    }
+  </script>
+</body>
+</html>
